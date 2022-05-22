@@ -72,8 +72,8 @@ def main():
             if name.endswith('.bsp'):
                 SRC = os.path.join(root, name)
                 DEST = os.path.join(TF2_MAP_DIR, name)
-                print('%s => %s' % (SRC, DEST))
                 shutil.copy(SRC, DEST)
+                print('%s => %s' % (SRC, DEST))
 
 if __name__ == '__main__':
     main()
