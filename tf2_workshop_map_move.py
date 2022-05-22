@@ -32,13 +32,14 @@ def get_user_home() -> str:
     return os.path.expanduser('~')
 
 def get_default_steamapps_dir() -> str:
-    if system() == 'Linux':
+    cur_system = system()
+    if cur_system == 'Linux':
         if in_wsl():
             return '/mnt/c/Program Files (x86)/Steam/steamapps'
         return get_user_home() + '/.steam/steam/SteamApps/'
-    elif system() == 'Darwin':  # MacOS
+    elif cur_system == 'Darwin':  # MacOS
         return get_user_home() + '/Library/Application Support/Steam/SteamApps'
-    elif system() == 'Windows':
+    elif cur_system == 'Windows':
         return 'C:\\Program Files (x86)\\Steam\\steamapps'
     else:
         raise OSError('Could not detect OS. Please specify an absolute path to your SteamApps directory.')
