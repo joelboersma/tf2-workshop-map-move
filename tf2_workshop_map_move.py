@@ -62,9 +62,10 @@ def main():
         show_help()
         return
 
+    PATH_SEP = '\\' if system() == 'Windows' else '/'
     STEAMAPPS_DIR = get_steamapps_dir(args)
-    TF2_WORKSHOP_DIR = STEAMAPPS_DIR + '/workshop/content/440'
-    TF2_MAP_DIR = STEAMAPPS_DIR + '/common/Team Fortress 2/tf/maps'
+    TF2_WORKSHOP_DIR = STEAMAPPS_DIR + PATH_SEP + PATH_SEP.join(['workshop', 'content', '440'])
+    TF2_MAP_DIR = STEAMAPPS_DIR + PATH_SEP + PATH_SEP.join(['common', 'Team Fortress 2', 'tf', 'maps'])
 
     for root, _, files in os.walk(TF2_WORKSHOP_DIR, topdown=False):
         for name in files:
