@@ -12,7 +12,7 @@ class NoSuchDirectoryException(Exception):
 def show_help() -> None:
     print("USAGE: python %s [--help] [steamapps_dir]" % __file__)
     print("  - \"--help\" will display this message.")
-    print("  - \"steamapps_dir\" is an optional argument to specify the filepath to the SteamApps directory. If not given, the default SteamApps path the current OS will be used.")
+    print("  - \"steamapps_dir\" is an optional argument to specify the filepath to the SteamApps directory. If not given, the default SteamApps path for the current OS will be used.")
 
 def validate_args(args: list[str]) -> None:
     if args == []:
